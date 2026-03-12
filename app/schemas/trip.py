@@ -16,7 +16,7 @@ class Preferences(BaseModel):
 class TripPlanRequest(BaseModel):
     origin: str=Field(...,examples=["Vienna"])
     destination: str=Field(default=None,examples=["Europe"])
-    budget:str=Field(gt=0,examples=[600])
+    budget:float=Field(gt=0,examples=[600.0])
     dates:TravelDates
     travelers:int=Field(gt=0,examples=[1])
     preferences:Optional[Preferences] = None

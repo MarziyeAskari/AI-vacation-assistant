@@ -10,7 +10,7 @@ app = FastAPI(
 router = APIRouter()
 
 
-@router.post("trip/plan", response_model=TripPlanResponse, tags=["trip planning"])
+@router.post("/trip/plan", response_model=TripPlanResponse, tags=["trip planning"])
 def plan_trip(request: TripPlanRequest):
     destination = request.destination
     transport = TransportOptions(
